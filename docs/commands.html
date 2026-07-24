@@ -9,7 +9,7 @@
 <script defer src="/agent-device/static/js/lib-react.e84adf13b9.js"></script>
 <script defer src="/agent-device/static/js/lib-router.853fe4366e.js"></script>
 <script defer src="/agent-device/static/js/56.538ceb78eb.js"></script>
-<script defer src="/agent-device/static/js/index.fb3abd0ce4.js"></script>
+<script defer src="/agent-device/static/js/index.c8b94d1ce7.js"></script>
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="generator" content="Rspress v2.0.12">
 <meta property="og:url" content="https://oss.callstack.com/agent-device">
@@ -752,7 +752,7 @@ On physical Android devices, only <code>cmd fingerprint</code> is attempted.</li
 <li><code>logs start</code> appends to <code>app.log</code> and rotates to <code>app.log.1</code> when the file exceeds 5 MB.</li>
 <li><code>open</code> prints <code>Session state: &lt;path&gt;</code> and JSON includes <code>sessionStateDir</code>, <code>runnerLogPath</code>, <code>requestLogPath</code>, and <code>eventLogPath</code>. Use the session directory to inspect concurrent runs without parsing global daemon logs.</li>
 <li><code>events.ndjson</code> contains the session event timeline; <code>requests/&lt;request-id&gt;.ndjson</code> contains daemon request diagnostics; <code>runner.log</code> contains Apple runner and <code>xcodebuild</code> output.</li>
-<li>Event timeline entries keep operational context such as command names, status, durations, paths, session/device/app identifiers, refs/selectors, and coordinates. Typed text, clipboard writes, push/event payloads, raw unknown command arguments, and matching raw message fragments are replaced with length-only placeholders. <code>--no-record</code> suppresses <code>action.recorded</code> entries, but request start/finish entries still record command/status/timing.</li>
+<li>Event timeline entries preserve command names, status, durations, bounded device/app inventory previews, lifecycle outcomes, artifact basenames, and structural action details such as scroll distance/direction, safe refs, and coordinates. User-entered text, clipboard contents, push/event payloads, selector values, free-form flags/messages/paths, and raw unknown command arguments are omitted or replaced with content-free placeholders. <code>--no-record</code> suppresses <code>action.recorded</code> entries, but request start/finish entries still record command/status/timing.</li>
 <li><code>network dump [limit] [summary|headers|body|all]</code> parses recent HTTP(s) entries from <code>app.log</code> for app/device sessions and from managed <code>agent-browser</code> request history for web sessions; <code>network log ...</code> is an alias.</li>
 <li>Prefer <code>--include headers|body|all</code> when you want explicit detail level without relying on positional ordering.</li>
 <li>On macOS, <code>logs</code> and <code>network dump</code> are app-scoped and parse Unified Logging output associated with the active session app.</li>
